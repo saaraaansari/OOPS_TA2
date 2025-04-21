@@ -1,0 +1,29 @@
+class Box<T> {
+    private T item;
+
+    public void setItem(T item) {
+        this.item = item;
+    }
+
+    public T getItem() {
+        return item;
+    }
+}
+
+public class Main {
+    public static <T> void printArray(T[] array) {
+        for (T element : array) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Box<String> stringBox = new Box<>();
+        stringBox.setItem("Hello Generics");
+        System.out.println(stringBox.getItem());
+
+        Integer[] nums = {1, 2, 3, 4};
+        printArray(nums);
+    }
+}
